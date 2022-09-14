@@ -211,6 +211,51 @@ app.get("/search", verifyToken, jsonParser, async (req, res) => {
   });
 });
 
+// Get All Flights
+
+app.get("/getflight", verifyToken, jsonParser, async (req, res) => {
+  jwt.verify(req.token, process.env.SECRET_KEY, async (err, authData) => {
+    if (err) {
+      // Forbidden to Enter Site
+      res.send(403);
+    } else {
+      // Search for flight
+      let allFlights = {};
+
+      const querySnapshot = await getDocs(collection(db, "flights"));
+      querySnapshot.forEach((result) => {
+        allFlights[result.id] = result.data();
+      });
+
+      res.send(allFlights);
+    }
+  });
+});
+
+// Get User Bookings
+
+app.get("/mybooking", verifyToken, jsonParser, async (req, res) => {
+  jwt.verify(req.token, process.env.SECRET_KEY, async (err, authData) => {
+    if (err) {
+      // Forbidden to Enter Site
+      res.send(403);
+    } else {
+      // Search for flight
+      let userData;
+
+      const userRef = collection(db, "users");
+      const q = query(userRef, where("email", "==", authData.email));
+
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((result) => {
+        userData = result.data();
+      });
+
+      res.send(userData);
+    }
+  });
+});
+
 // Book Flight
 // User Mail Address
 app.post("/bookflight", verifyToken, jsonParser, async (req, res) => {
