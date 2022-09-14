@@ -239,7 +239,8 @@ app.get("/mybooking", verifyToken, jsonParser, async (req, res) => {
   jwt.verify(req.token, process.env.SECRET_KEY, async (err, authData) => {
     if (err) {
       // Forbidden to Enter Site
-      res.send(403);
+      console.log(err)
+      res.sendStatus(403);
     } else {
       // Search for flight
       let userData;
@@ -317,6 +318,7 @@ function verifyToken(req, res, next) {
     // Get the token from the Header
     const bearer = bearerHeader.split(" ");
     const bearerToken = bearer[1];
+    console.log(bearerToken)
     req.token = bearerToken;
     next();
   } else {
