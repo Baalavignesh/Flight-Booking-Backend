@@ -45,6 +45,11 @@ const db = getFirestore();
 var jsonParser = bodyParser.json();
 
 // Login User
+
+app.get("/", (req, res) => {
+  res.send("Working API");
+});
+
 app.post("/login", jsonParser, (req, res) => {
   // Login using Firebase Function
   signInWithEmailAndPassword(auth, req.body.email, req.body.password)
