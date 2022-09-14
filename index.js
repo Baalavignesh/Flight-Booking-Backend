@@ -79,7 +79,7 @@ app.post("/login", jsonParser, (req, res) => {
     .catch((error) => {
       const errorMessage = error.message;
       console.log(errorMessage);
-      res.send(errorMessage);
+      res.status(401).send(errorMessage);
     });
 });
 
@@ -217,6 +217,7 @@ app.get("/getflight", verifyToken, jsonParser, async (req, res) => {
   jwt.verify(req.token, process.env.SECRET_KEY, async (err, authData) => {
     if (err) {
       // Forbidden to Enter Site
+      console.log(err)
       res.send(403);
     } else {
       // Search for flight
