@@ -268,7 +268,7 @@ app.post("/bookflight", verifyToken, jsonParser, async (req, res) => {
       // Book Flight
       // Add the flight details to my bookings
       const userRef = collection(db, "users");
-      const q = query(userRef, where("email", "==", req.body.email));
+      const q = query(userRef, where("email", "==", authData.email));
 
       let user_doc_id;
       const querySnapshotUsers = await getDocs(q);
