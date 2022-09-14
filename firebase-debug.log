@@ -1,0 +1,21 @@
+[debug] [2022-09-14T13:21:53.456Z] ----------------------------------------------------------------------
+[debug] [2022-09-14T13:21:53.457Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\baala\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-09-14T13:21:53.458Z] CLI Version:   11.9.0
+[debug] [2022-09-14T13:21:53.458Z] Platform:      win32
+[debug] [2022-09-14T13:21:53.458Z] Node Version:  v16.14.0
+[debug] [2022-09-14T13:21:53.466Z] Time:          Wed Sep 14 2022 18:51:53 GMT+0530 (India Standard Time)
+[debug] [2022-09-14T13:21:53.466Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-14T13:21:53.474Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-14T13:21:53.474Z] > authorizing via signed-in user (baalavignesh21@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Hackathon\flight-booking\backend
+
