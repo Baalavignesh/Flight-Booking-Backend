@@ -35,12 +35,15 @@ import {
 import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 const auth = getAuth();
 const db = getFirestore();
+
+app.use(cors());
 
 var jsonParser = bodyParser.json();
 
